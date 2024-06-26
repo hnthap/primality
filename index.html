@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primality</title>
+    <link rel="stylesheet" href="styles.css"></link>
+</head>
+<body onload="displayPrimality();displayEratosthenesSieve();">
+    <header>
+        <h1>Primality Test</h1>
+    </header>
+    <div id="main">
+        <input type="number" class="inputNumber" id="inputNumberPrimality" oninput="displayPrimality();displayEratosthenesSieve();" value="127">
+        <p class="display" id="displayPrimality"></p>
+        <h3>Eratosthenes Sieve around <span id="currentValue"></span></h3>
+        <table class="display">
+            <tr>
+                <td></td>
+                <td>+0</td>
+                <td>+1</td>
+                <td>+2</td>
+                <td>+3</td>
+                <td>+4</td>
+                <td>+5</td>
+                <td>+6</td>
+                <td>+7</td>
+                <td>+8</td>
+                <td>+9</td>
+            </tr>
+            <tr>
+                <td id="erat0"></td>
+                <td id="erat00">🅿️</td>
+                <td id="erat01"></td>
+                <td id="erat02"></td>
+                <td id="erat03"></td>
+                <td id="erat04"></td>
+                <td id="erat05"></td>
+                <td id="erat06"></td>
+                <td id="erat07"></td>
+                <td id="erat08"></td>
+                <td id="erat09"></td>
+            </tr>
+            <tr>
+                <td id="erat1"></td>
+                <td id="erat10">🅿️</td>
+                <td id="erat11"></td>
+                <td id="erat12"></td>
+                <td id="erat13"></td>
+                <td id="erat14"></td>
+                <td id="erat15"></td>
+                <td id="erat16"></td>
+                <td id="erat17"></td>
+                <td id="erat18"></td>
+                <td id="erat19"></td>
+            </tr>
+            <tr>
+                <td id="erat2"></td>
+                <td id="erat20">🅿️</td>
+                <td id="erat21"></td>
+                <td id="erat22"></td>
+                <td id="erat23"></td>
+                <td id="erat24"></td>
+                <td id="erat25"></td>
+                <td id="erat26"></td>
+                <td id="erat27"></td>
+                <td id="erat28"></td>
+                <td id="erat29"></td>
+            </tr>
+            <tr>
+                <td id="erat3"></td>
+                <td id="erat30">🅿️</td>
+                <td id="erat31"></td>
+                <td id="erat32"></td>
+                <td id="erat33"></td>
+                <td id="erat34"></td>
+                <td id="erat35"></td>
+                <td id="erat36"></td>
+                <td id="erat37"></td>
+                <td id="erat38"></td>
+                <td id="erat39"></td>
+            </tr>
+            <tr>
+                <td id="erat4"></td>
+                <td id="erat40">🅿️</td>
+                <td id="erat41"></td>
+                <td id="erat42"></td>
+                <td id="erat43"></td>
+                <td id="erat44"></td>
+                <td id="erat45"></td>
+                <td id="erat46"></td>
+                <td id="erat47"></td>
+                <td id="erat48"></td>
+                <td id="erat49"></td>
+            </tr>
+            <tr>
+                <td id="erat5"></td>
+                <td id="erat50">🅿️</td>
+                <td id="erat51"></td>
+                <td id="erat52"></td>
+                <td id="erat53"></td>
+                <td id="erat54"></td>
+                <td id="erat55"></td>
+                <td id="erat56"></td>
+                <td id="erat57"></td>
+                <td id="erat58"></td>
+                <td id="erat59"></td>
+            </tr>
+            <tr>
+                <td id="erat6"></td>
+                <td id="erat60">🅿️</td>
+                <td id="erat61"></td>
+                <td id="erat62"></td>
+                <td id="erat63"></td>
+                <td id="erat64"></td>
+                <td id="erat65"></td>
+                <td id="erat66"></td>
+                <td id="erat67"></td>
+                <td id="erat68"></td>
+                <td id="erat69"></td>
+            </tr>
+            <tr>
+                <td id="erat7"></td>
+                <td id="erat70">🅿️</td>
+                <td id="erat71"></td>
+                <td id="erat72"></td>
+                <td id="erat73"></td>
+                <td id="erat74"></td>
+                <td id="erat75"></td>
+                <td id="erat76"></td>
+                <td id="erat77"></td>
+                <td id="erat78"></td>
+                <td id="erat79"></td>
+            </tr>
+            <tr>
+                <td id="erat8"></td>
+                <td id="erat80">🅿️</td>
+                <td id="erat81"></td>
+                <td id="erat82"></td>
+                <td id="erat83"></td>
+                <td id="erat84"></td>
+                <td id="erat85"></td>
+                <td id="erat86"></td>
+                <td id="erat87"></td>
+                <td id="erat88"></td>
+                <td id="erat89"></td>
+            </tr>
+            <tr>
+                <td id="erat9"></td>
+                <td id="erat90">🅿️</td>
+                <td id="erat91"></td>
+                <td id="erat92"></td>
+                <td id="erat93"></td>
+                <td id="erat94"></td>
+                <td id="erat95"></td>
+                <td id="erat96"></td>
+                <td id="erat97"></td>
+                <td id="erat98"></td>
+                <td id="erat99"></td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <p class="displaySmall">(Using 6k &pm; 1 optimization)</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
