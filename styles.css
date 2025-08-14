@@ -1,5 +1,6 @@
 html {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: hsl(0, 0%, 90%);
 }
 
 header {
@@ -26,6 +27,7 @@ a {
     min-width: 100px;
     max-width: 360px;
     width: 40%;
+    background-color: hsl(0, 0%, 95%);
 }
 
 .display {
