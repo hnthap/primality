@@ -9,24 +9,27 @@
 <body onload="displayPrimality();displayEratosthenesSieve();">
     <header>
         <h1>Primality Test</h1>
+        <p class="displaySmall">
+            [&nbsp;<a href="https://github.com/hnthap/primality">Source Code</a>&nbsp;]
+        </p>
     </header>
     <div id="main">
         <input type="number" class="inputNumber" id="inputNumberPrimality" oninput="displayPrimality();displayEratosthenesSieve();" value="127">
         <p class="display" id="displayPrimality"></p>
-        <h3>Eratosthenes Sieve around <span id="currentValue"></span></h3>
+        <!-- <h3>Eratosthenes Sieve around <span id="currentValue"></span></h3> -->
         <table class="display">
             <tr>
-                <td></td>
-                <td>+0</td>
-                <td>+1</td>
-                <td>+2</td>
-                <td>+3</td>
-                <td>+4</td>
-                <td>+5</td>
-                <td>+6</td>
-                <td>+7</td>
-                <td>+8</td>
-                <td>+9</td>
+                <th></th>
+                <th>+0</th>
+                <th>+1</th>
+                <th>+2</th>
+                <th>+3</th>
+                <th>+4</th>
+                <th>+5</th>
+                <th>+6</th>
+                <th>+7</th>
+                <th>+8</th>
+                <th>+9</th>
             </tr>
             <tr>
                 <td id="erat0"></td>
@@ -159,10 +162,8 @@
                 <td id="erat99"></td>
             </tr>
         </table>
-    </div>
-    <footer>
         <p class="displaySmall">(Using 6k &pm; 1 optimization)</p>
-    </footer>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

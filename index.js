@@ -76,17 +76,21 @@ function displayPrimality() {
   const element = document.getElementById('displayPrimality');
   const value = Number(document.getElementById('inputNumberPrimality').value);
   if (!Number.isInteger(value) || !Number.isFinite(value) || value <= 0) {
-    element.innerHTML = `Write a positive integer.`;
+    element.innerHTML = `Enter a positive integer.`;
   } else if (value > MAX_VALUE) {
-    element.innerHTML = `The number should not be greater than ` +
+    element.innerHTML = `Enter an integer less than ` +
     `${MAX_VALUE.toExponential()}.`;
   } else {
     const leastDivisor = getLeastPositiveDivisorExceptOne(value);
     if (leastDivisor === NaN || leastDivisor !== value) {
-      element.innerHTML = value + ' <span style="color:tomato">is not</span> ' +
-      'a prime number. ';
       if (Number.isFinite(leastDivisor)) {
-        element.innerHTML += `It equals ${leastDivisor} &times; ${value / leastDivisor}.`;
+        element.innerHTML =
+          value +
+          ` &equals; ${leastDivisor} &times; ${value / leastDivisor}` +
+          ` <span style="color:tomato">is not</span> a prime number.`;
+      } else {
+        element.innerHTML =
+          value + ' <span style="color:tomato">is not</span> a prime number.';
       }
     } else {
       element.innerHTML = value + ' <span style="color:dodgerblue">is</span> ' +
